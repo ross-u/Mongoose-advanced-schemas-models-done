@@ -17,14 +17,15 @@ mongoose.connect(`mongodb://localhost/${dbName}`)
 // INSERTING DOCUMENTS - `Model.create`
 // https://mongoosejs.com/docs/api.html#model_Model.create
 
-Client.create({
-  name: "Slavica Cirkovic",
+let client1 = {
+  name: "Lidia Campos",
   age: 60,
   accountActive: true,
   balance: 31218.56,
   payments: []
-},
-  (err, result) => {
+}
+
+Client.create( client1 , (err, result) => {
     if (err) console.log(err);
     else console.log('Document inserted', result);
   }
